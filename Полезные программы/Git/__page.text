@@ -1,0 +1,16 @@
+!!!! (:counter:). добавление в STASH с подписью
+
+git stash [save [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]
+                    [-u|--include-untracked] [-a|--all] [<message>]]
+
+Пример : 
+
+(:source lang="bash":)
+git stash save "blablabla"
+(:sourceend:)
+
+!!!! (:counter:). раскраска названия ветки цветом
+
+(:source lang="bash":)
+git config --global color.status.branch "yellow"
+(:sourceend:)

@@ -1,0 +1,101 @@
+%center%!! Схема контроллеров 
+
+(:diagram:)
+statusSelection
+setDisabilitySertifcate
+intro
+login
+
+intro -> login  [color = green, thick]
+
+// events,  friends, messages, favorite,   about,  report, donation, logout
+
+index -> statusSelection, intro  [color = green, thick]
+login -> events [color = green, thick]
+login  ->  statusSelection
+
+
+events -> createWalkEvent [color = green, thick, label = "New"];
+events -> concertInfo [color = green, thick]
+events -> walkInfo [color = green, thick]
+helpInfo, reportWindow, createHelpInfo
+events -> helpInfo [color = green, thick]
+events -> reportWindow [color = green, thick]
+events -> createHelpInfo [color = green, thick, label = "New"];
+
+walkInfo -> friendsInvitation [color = green, thick]
+chooseCompany
+walkInfo -> whoGo [color = green, thick]
+walkInfo -> createWalkEvent [label = "Edit", color = green, thick]
+walkInfo -> geoMarkerMap [color = green, thick]
+
+concertInfo -> chooseCompany [color = green, thick]
+concertInfo -> whoGo [color = green, thick];
+concertInfo -> setDisabilitySertifcate [style = dashed, color = green, thick];
+
+
+
+
+statusSelection ->  setDisabilitySertifcate  [color = green, thick]
+statusSelection ->   events
+setDisabilitySertifcate -> events [color = green, thick]
+
+searchFriendsForInvitation
+androidProfile
+friendProfile
+
+helpInfo -> androidProfile  [style = dashed, color =red, thick]
+
+helpInfo -> friendProfile [style = dashed, color =red, thick]
+
+chooseCompany -> androidProfile  [style = dashed, color =red, thick]
+chooseCompany -> friendProfile [style = dashed, color =red, thick]
+friendsInvitation -> searchFriendsForInvitation  [color = green, thick]
+
+login -> friends [style = none]
+login -> messages [style = none]
+login -> favorite [style = none]
+login -> about [style = none]
+login -> report [style = none]
+// login -> donation [style = none]
+// login -> logout [style = none]
+
+friendProfile -> friendsMap [folded, color = green, thick];
+friendProfile -> reportWindow  [folded, color = green, thick];
+friendProfile -> chat [folded ,color = green, thick];
+
+friends -> friendProfile [style = dashed, color =blue, thick]
+friends -> friendsSearch [color = green, thick]
+friends -> friendsMap [color = green, thick]
+
+friendsMap -> friendProfile  [style = dashed, color =blue, thick]
+
+friendsSearch -> androidProfile  [style = dashed, color =red, thick]
+friendsSearch -> friendProfile [style = dashed, color =red, thick]
+
+messages -> friendProfile  [style = dashed, color =blue, thick]
+messages -> chat [color = green, thick]
+messages -> messageSearch [color = green, thick]
+messages -> newMessage [color = green, thick]
+
+chat -> geoMarkerMap  [color =green, thick]
+chat -> photoFullscreen [color = green, thick]
+chat -> videoFullscreen [color = green, thick]
+
+messageSearch -> chat [color = green, thick]
+messageSearch -> androidProfile  [style = dashed, color =red, thick]
+messageSearch -> friendProfile  [style = dashed, color =red, thick]
+
+newMessage -> chat [color = green, thick]
+
+favorite -> friendsInvitation [color = green, thick]
+favorite -> chooseCompany [color = green, thick]
+favorite -> walkInfo [color = green, thick]
+favorite -> concertInfo [color = green, thick]
+favorite -> createHelpInfo [color = green, thick]
+
+androidProfile -> editProfile
+
+
+(:diagramend:)
+

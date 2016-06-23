@@ -1,0 +1,5 @@
+изменение версии Android Build Tools
+
+(:source lang="bash":)
+appc ti config android.buildTools.selectedVersion 23.0.3
+(:sourceend:)

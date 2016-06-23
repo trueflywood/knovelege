@@ -1,0 +1,70 @@
+!! Настраиваем окружение на Mac OS и собираем автономное приложение с PySide/PyQt
+
+Статья тут http://habrahabr.ru/post/124573/
+
+!!! Что устанавливалось 
+
+!!!!! (:counter:) Xcode
+!!!!! (:counter:) Brew
+!!!!! (:counter:) Python
+(:source lang="shell":)
+	brew install python3
+(:sourceend:)
+!!!!! (:counter:) virtualenv
+(:source lang="shell":)
+	sudo easy_install virtualenv
+	sudo easy_install virtualenvwrapper
+(:sourceend:)
+!!!!! (:counter:) PySide и Qt
+	со страницы разработчиков
+	[[https://wiki.qt.io/PySide_Binaries_MacOSX]]
+
+!!! Настройка окружения
+
+Создаем виртуальное окружение
+
+Выбираем место где будет жить окружение, для этого в '''~/.bash_profile''' добавляем
+(:source lang="shell":)
+	export WORKON_HOME=~/Envs
+	source /usr/local/bin/virtualenvwrapper.sh
+(:sourceend:)
+
+Создаем окружение
+(:source lang="shell":)
+$ . ~/.bash_profile
+$ mkdir -p $WORKON_HOME
+$ mkvirtualenv --no-site-packages --python=/Usr/local/Cellar/phyton/2.7.10_2/bin/python2.7 py27
+(:sourceend:)
+	# --no-site-packages - говорит, что виртуальное окружение не будет использовать системные пекеджи
+	# --python=/opt/local/bin/python2.7 - какой интерпретор будет использоваться
+	# py27 - название окружения
+
+ После этого в '''$WORKON_HOME/py27''' будет создана базовая структура каталогов и необходимые файлы. Кроме того окружение станет активным, в начале командной строки появится (py27). В дальнейшем, для активации нужно будет выполнить
+(:source lang="shell":)
+$ workon py27
+(:sourceend:)
+
+!!! Теперь нужно перенести в новое окружение все библиотеки и модули:
+(:counter name="okr":) PySide packages
+(:source lang="shell":)
+$ cd /Library/Python/2.7/site-packages/
+$ mv PySide/ ~/Envs/py27/lib/python2.7/site-packages/
+$ mv pysideuic/ ~/Envs/py27/lib/python2.7/site-packages/
+(:sourceend:)
+(:counter name="okr":) PySide libs
+(:source lang="shell":)
+$ cd /usr/lib/
+$ sudo mv libpyside-python2.7.* ~/Envs/py27/lib/
+(:sourceend:)
+(:counter name="okr":) Необходимая для PySide библиотека
+(:source lang="shell":)
+$ sudo mv libshiboken-python2.7.* ~/Envs/py27/lib/
+(:sourceend:)
+(:counter name="okr":) Qt4 libs
+(:source lang="shell":)
+$ cd /Library/Frameworks/
+$ cp -pR Qt* ~/Envs/py27/lib/
+$ cp -pR phonon.framework ~/Envs/py27/lib/ #Обратите внимание на отсутствие слеша после framework!
+(:sourceend:)
+
+

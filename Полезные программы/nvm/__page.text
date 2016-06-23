@@ -1,0 +1,20 @@
+!! Управлене версиями NodeJS
+
+(:source lang="shell":)
+npm install -g n
+(:sourceend:)
+
+(:counter:) установка/включение нужной версии
+(:source lang="shell":)
+n 0.12.7
+(:sourceend:)
+
+(:counter:) установка/включение последней стабильной
+(:source lang="shell":)
+n stable
+(:sourceend:)
+
+(:counter:) промсмотр установленных версий
+(:source lang="shell":)
+n
+(:sourceend:)

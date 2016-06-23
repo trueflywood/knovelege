@@ -1,0 +1,14 @@
+[General]
+type = wiki
+tags = дом
+order = 7
+creationdatetime = 2015-12-08 09:41:00.342000
+datetime = 2015-12-08 09:41:00.436000
+cursorposition = 0
+
+[wiki]
+md5_hash = dbc2df083a8dbcb16d508a868b1b58bc
+
+[Tree]
+expand = False
+

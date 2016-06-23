@@ -1,0 +1,9 @@
+(:source lang="bash":)
+sudo npm i -g cordova ionic
+(:sourceend:)
+
+Для разработки под IOS
+(:source lang="bash":)
+npm install -g ios-sim
+npm install -g ios-deploy
+(:sourceend:)

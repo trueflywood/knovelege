@@ -1,0 +1,31 @@
+Для управления мобильным телефоном сконсоли компьютера
+
+(:counter:) Сделать скриншот
+
+ (:source lang="bash":)
+adb shell screencap -p /sdcard/screencap2.png && adb pull /sdcard/screencap2.png
+(:sourceend:)
+
+(:counter:) Запись видео с экрана
+
+ (:source lang="bash":)
+adb shell screenrecord /sdcard/demo.mp4 && adb pull /sdcard/demo.mp4
+(:sourceend:)
+
+(:counter:) Запустить приложение 
+
+(:source lang="bash":)
+adb shell am start -n com.package.name/com.package.name.ActivityName
+(:sourceend:)
+
+
+(:table border="1":)
+(:row:)
+	(:hcell colspan="2" :) Фреймворк
+	(:hcell:) значение < ActivityName >
+(:row:)
+(:cell:) 1
+(:cell:) cordova
+(:cell text-alighn="right":) MainActivity
+(:tableend:)
+

@@ -1,0 +1,16 @@
+[General]
+type = search
+tags = 
+order = 0
+creationdatetime = 2015-10-15 09:55:26.750854
+datetime = 2016-04-15 16:46:35.888000
+
+[Search]
+phrase = adb
+tags = 
+strategy = 0
+sort = 0
+
+[SearchResults]
+page_0 = Полезные программы/adb
+

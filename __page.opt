@@ -1,0 +1,10 @@
+[Tree]
+expand = True
+
+[General]
+selectedtab = 0
+cursorposition = 0
+
+[Tabs]
+tab_0 = Freamworks
+

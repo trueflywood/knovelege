@@ -1,0 +1,25 @@
+!!! Менеджер установки пакетов NPM
+
+
+(:style:)
+div {display: inline}
+#first {color: red}
+(:styleend:)
+<div id='first'>[++++ВАЖНО!!++++]</div> <div id='2'>[++Пакет '''{+jq+}''' ставить через '''{+brew+}'''++]</div> !!!!
+
+(:source lang="bash":)
+npm instal npm@latest
+(:sourceend:)
+
+!!! Пакет coprsproxy для проксирования трафика при отладке
+
+установка 
+(:source lang="bash":)
+npm install -g corsproxy
+(:sourceend:)
+
+использование
+
+(:source lang="bash":)
+corsproxy
+(:sourceend:)

@@ -1,0 +1,26 @@
+Заходим в  <sdk>/android/cli/commands/_build.js
+
+Находим функцию  AndroidBuilder.prototype.createSignedApk
+
+меняем 
+(:source lang="javascript":)
+var sigalg = this.keystoreAlias.sigalg || 'MD5withRSA',
+    signerArgs = [
+        '-sigalg', sigalg,
+        '-digestalg', 'SHA1',
+        '-keystore', this.keystore,
+        '-storepass', this.keystoreStorePassword
+    ];
+(:sourceend:)
+
+на 
+(:source lang="javascript":)
+var checkSigAlg = this.keystoreAlias.sigalg == 'SHA256withRSA';
+var sigalg = checkSigAlg? "SHA1withRSA":(this.keystoreAlias.sigalg || 'MD5withRSA'),
+    signerArgs = [
+        '-sigalg', sigalg,
+        '-digestalg', 'SHA1',
+        '-keystore', this.keystore,
+        '-storepass', this.keystoreStorePassword
+    ];
+(:sourceend:)

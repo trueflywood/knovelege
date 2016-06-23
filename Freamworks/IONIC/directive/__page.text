@@ -1,0 +1,31 @@
+!!! Директива делающая каждый символ заглавным
+
+(:source lang="javascript":)
+myApp.directive('capitalize', function() {
+   return {
+     require: 'ngModel',
+     link: function(scope, element, attrs, modelCtrl) {
+        var capitalize = function(inputValue) {
+           if(inputValue == undefined) inputValue = '';
+           var capitalized = inputValue.toUpperCase();
+           if(capitalized !== inputValue) {
+              modelCtrl.$setViewValue(capitalized);
+              modelCtrl.$render();
+            }         
+            return capitalized;
+         }
+         modelCtrl.$parsers.push(capitalize);
+         capitalize(scope[attrs.ngModel]);  // capitalize initial value
+     }
+   };
+});
+
+(:sourceend:)
+
+...and HTML like this:
+
+(:source lang="html":)
+<input type="text" ng-model="name" capitalize>
+(:sourceend:)
+
+источник http://stackoverflow.com/questions/16388562/angularjs-force-uppercase-in-textbox

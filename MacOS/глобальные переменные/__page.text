@@ -1,0 +1,6 @@
+Глобальные перменные хранятся в ''' ~/.bash_profile'''
+перечитывается он командой 
+
+(:source lang="text":)
+source ~/.bash_profile
+(:sourceend:)

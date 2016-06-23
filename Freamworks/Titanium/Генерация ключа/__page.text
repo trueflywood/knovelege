@@ -1,0 +1,18 @@
+Генерация ключей для подписи приложения: 
+(:source lang=shall:)
+keytool -genkey -v -keystore key-for-canariantime-canariantime.keystore -alias canariantime-canariantime -keyalg RSA -keysize 2048 -validity 10000 -sigalg SHA1withRSA
+(:sourceend:)
+
+Titanium берет способ подписи из ключа поэтому присоздании обязательно указывать "'''-sigalg SHA1withRSA'''" 
+
+Хеш -ключ для Facebook 
+Генерация:
+(:source lang="shell":)
+keytool -exportcert  -keystore <file>.keystore -alias <alias>  -storepass <pass> | openssl sha1 -binary | openssl base64
+(:sourceend:)
+Куда вставлять:
+%thumb width=300%Attach:0f2787d95bd34d325545e2ca28e151fe1.png%%
+
+
+
+

@@ -1,0 +1,15 @@
+Обновлене  SDK
+Показать все версии
+(:source lang="bash":)
+appc ti sdk list --releases
+(:sourceend:)
+
+установить последнюю
+(:source lang="bash":)
+appc ti sdk install
+(:sourceend:)
+
+установить конкретную версию
+(:source lang="bash":)
+appc ti sdk install 4.1.0.GA 
+(:sourceend:)
