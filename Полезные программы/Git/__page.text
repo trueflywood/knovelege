@@ -14,3 +14,45 @@ git stash save "blablabla"
 (:source lang="bash":)
 git config --global color.status.branch "yellow"
 (:sourceend:)
+
+!!!! (:counter:). Несколько SSH ключей для MacOS, GitBash и Linux 
+
+Создаем несколько ключей с помощью команды
+(:source lang="bash":)
+ssh-keygen -f ~/.ssh/<personalFileName1> -C "<personalKeyId1>" 
+ssh-keygen -f ~/.ssh/<personalFileName2> -C "<personalKeyId2>" 
+(:sourceend:)
+
+Создаем config-фаил:
+(:source lang="bash":)
+nano ~/.ssh/config 
+(:sourceend:)
+
+Заносим тутда такие данные 
+(:source lang="text":)
+Host bitbucket.org
+ HostName bitbucket.org
+ IdentityFile ~/.ssh/workid
+Host <personalKeyId1>
+ HostName bitbucket.org
+ IdentityFile ~/.ssh/<personalFileName1>
+Host <personalKeyId2>
+ HostName bitbucket.org
+ IdentityFile ~/.ssh/<personalFileName2>
+(:sourceend:)
+
+Ссылки на Git -репозитарии по умолчанию выглядят так
+(:source lang="text":)
+git@bitbucket.org:<accountname>/<reponame>.git
+(:sourceend:)
+По сути "bitbucket.org" -это ни что инное как наш "personalKeyId1".
+Меняя эту часть в ссылке на репозитарий - мы будем указывать каким ключем пользоваться.
+Так для первого ключа это будет :
+(:source lang="text":)
+git@<personalKeyId1>:<accountname>/<reponame>.git
+(:sourceend:)
+
+А для второго:
+(:source lang="text":)
+git@<personalKeyId2>:<accountname>/<reponame>.git
+(:sourceend:)

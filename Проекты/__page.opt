@@ -10,5 +10,5 @@ cursorposition = 0
 md5_hash = 72f97658f5cad855bae0405b562cb0af
 
 [Tree]
-expand = False
+expand = True
 

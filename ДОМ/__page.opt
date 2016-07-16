@@ -7,8 +7,8 @@ datetime = 2015-12-08 09:41:00.436000
 cursorposition = 0
 
 [wiki]
-md5_hash = dbc2df083a8dbcb16d508a868b1b58bc
+md5_hash = fd9d86dc7f96fad2bf31cd76a0f18bbc
 
 [Tree]
-expand = False
+expand = True
 

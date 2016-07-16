@@ -5,21 +5,25 @@
 div {display: inline}
 #first {color: red}
 (:styleend:)
-<div id='first'>[++++ВАЖНО!!++++]</div> <div id='2'>[++Пакет '''{+jq+}''' ставить через '''{+brew+}'''++]</div> !!!!
 
-(:source lang="bash":)
-npm instal npm@latest
+<div id='first'>
+[++++ВАЖНО!!++++]</div> <div id='2'>[++Пакет '''{+jq+}''' ставить через '''{+brew+}'''++]</div> !!!!
+
+(:source lang="shell":)
+n 0.12.7
 (:sourceend:)
 
 !!! Пакет coprsproxy для проксирования трафика при отладке
 
 установка 
-(:source lang="bash":)
+
+(:source lang="shell":)
 npm install -g corsproxy
 (:sourceend:)
 
 использование
 
-(:source lang="bash":)
+
+(:source lang="shell":)
 corsproxy
 (:sourceend:)

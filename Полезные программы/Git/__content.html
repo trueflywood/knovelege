@@ -19,8 +19,10 @@
 .highlight-default .err { border: 1px solid #FF0000 } /* Error */
 .highlight-default .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight-default .o { color: #666666 } /* Operator */
+.highlight-default .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight-default .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .highlight-default .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight-default .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight-default .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight-default .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight-default .gd { color: #A00000 } /* Generic.Deleted */
@@ -89,23 +91,69 @@ div.source-block {border-style: solid; border-color: gray; border-width: 1px; }<
 </head>
 
 <body>
-
 <h3>1. добавление в STASH с подписью</h3>
-<br>
-git stash [save <span style="font-size:80%">p|--patch] [-k|--[no</span>keep-index] [-q|--quiet]<br>
-                    [-u|--include-untracked] [-a|--all] [<message>]]<br>
-<br>
-Пример : <br>
-<br>
+<br/>
+git stash [save <span style="font-size:80%">p|--patch] [-k|--[no</span>keep-index] [-q|--quiet]<br/>
+                    [-u|--include-untracked] [-a|--all] [<message>]]<br/>
+<br/>
+Пример : <br/>
+<br/>
 <div class="source-block"><div class="highlight-default">
 <pre>git stash save <span class="s2">&quot;blablabla&quot;</span>
 </pre>
-</div></div><br>
+</div></div><br/>
 <h3>2. раскраска названия ветки цветом</h3>
-<br>
+<br/>
 <div class="source-block"><div class="highlight-default">
 <pre>git config --global color.status.branch <span class="s2">&quot;yellow&quot;</span>
 </pre>
-</div></div>
+</div></div><br/>
+<h3>3. Несколько SSH ключей для MacOS, GitBash и Linux </h3>
+<br/>
+Создаем несколько ключей с помощью команды<br/>
+<div class="source-block"><div class="highlight-default">
+<pre>ssh-keygen -f ~/.ssh/&lt;personalFileName1&gt; -C <span class="s2">&quot;&lt;personalKeyId1&gt;&quot;</span> 
+ssh-keygen -f ~/.ssh/&lt;personalFileName2&gt; -C <span class="s2">&quot;&lt;personalKeyId2&gt;&quot;</span>
+</pre>
+</div></div><br/>
+<br/>
+Создаем config-фаил:<br/>
+<div class="source-block"><div class="highlight-default">
+<pre>nano ~/.ssh/config
+</pre>
+</div></div><br/>
+<br/>
+Заносим тутда такие данные <br/>
+<div class="source-block"><div class="highlight-default">
+<pre>Host bitbucket.org
+ HostName bitbucket.org
+ IdentityFile ~/.ssh/workid
+Host &lt;personalKeyId1&gt;
+ HostName bitbucket.org
+ IdentityFile ~/.ssh/&lt;personalFileName1&gt;
+Host &lt;personalKeyId2&gt;
+ HostName bitbucket.org
+ IdentityFile ~/.ssh/&lt;personalFileName2&gt;
+</pre>
+</div></div><br/>
+<br/>
+Ссылки на Git -репозитарии по умолчанию выглядят так<br/>
+<div class="source-block"><div class="highlight-default">
+<pre>git@bitbucket.org:&lt;accountname&gt;/&lt;reponame&gt;.git
+</pre>
+</div></div><br/>
+По сути "bitbucket.org" -это ни что инное как наш "personalKeyId1".<br/>
+Меняя эту часть в ссылке на репозитарий - мы будем указывать каким ключем пользоваться.<br/>
+Так для первого ключа это будет :<br/>
+<div class="source-block"><div class="highlight-default">
+<pre>git@&lt;personalKeyId1&gt;:&lt;accountname&gt;/&lt;reponame&gt;.git
+</pre>
+</div></div><br/>
+<br/>
+А для второго:<br/>
+<div class="source-block"><div class="highlight-default">
+<pre>git@&lt;personalKeyId2&gt;:&lt;accountname&gt;/&lt;reponame&gt;.git
+</pre>
+</div></div><br/>
 </body>
 </html>

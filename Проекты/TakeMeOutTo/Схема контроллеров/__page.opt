@@ -3,11 +3,11 @@ type = wiki
 tags = контроллер, controller
 order = 2
 creationdatetime = 2015-09-30 10:25:50.735749
-datetime = 2016-04-12 08:48:08.657000
-cursorposition = 3159
+datetime = 2016-07-16 09:18:41.282000
+cursorposition = 30
 
 [wiki]
-md5_hash = 442b3976f19a232f5f7344fc3a92fc8a
+md5_hash = f5ff8bd90e90a7de69eeef85ec88b0ed
 
 [Misc]
 pageindex = 0
