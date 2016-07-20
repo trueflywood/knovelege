@@ -1,0 +1,5 @@
+!!!! Запуск в браузере
+
+(:source lang="bash":)
+sencha app watch
+(:sourceend:)
