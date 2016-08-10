@@ -1,7 +1,7 @@
 [General]
 type = wiki
 tags = дом
-order = 7
+order = 5
 creationdatetime = 2015-12-08 09:41:00.342000
 datetime = 2015-12-08 09:41:00.436000
 cursorposition = 0
@@ -10,7 +10,7 @@ cursorposition = 0
 md5_hash = fd9d86dc7f96fad2bf31cd76a0f18bbc
 
 [Tree]
-expand = True
+expand = False
 
 [Misc]
 pageindex = 0
