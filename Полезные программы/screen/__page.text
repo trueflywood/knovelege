@@ -1,0 +1,16 @@
+Консольная утилита позволяющая создавать сессии к которым моет подключиться много пользователей
+
+ Создание сессии 
+(:source lang="bash":)
+screen -dmS smsAn-watch
+(:sourceend:)
+
+Подключение к сессии 
+(:source lang="bash":)
+screen -x smsAn-watch
+(:sourceend:)
+
+Список сессий 
+(:source lang="bash":)
+screen -ls
+(:sourceend:)

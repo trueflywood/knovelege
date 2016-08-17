@@ -1,3 +1,5 @@
+
+
 !!!! (:counter:). добавление в STASH с подписью
 
 git stash [save [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]
@@ -56,3 +58,5 @@ git@<personalKeyId1>:<accountname>/<reponame>.git
 (:source lang="text":)
 git@<personalKeyId2>:<accountname>/<reponame>.git
 (:sourceend:)
+
+Другие статьи: [[/Полезные статьи по темам/Git, github]]

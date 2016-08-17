@@ -3,11 +3,11 @@ type = wiki
 tags = color, цвет, git, multiple, ssh-key
 order = 1
 creationdatetime = 2015-11-26 09:28:50.757000
-datetime = 2016-07-16 09:14:19.108000
-cursorposition = 1421
+datetime = 2016-08-17 09:41:34.153000
+cursorposition = 1627
 
 [wiki]
-md5_hash = 06dd021023e54936e23cae571fbdc67e
+md5_hash = ac3569c652fd32e9b921ff90210c7bed
 
 [Misc]
 pageindex = 1

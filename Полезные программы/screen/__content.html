@@ -91,72 +91,24 @@ div.source-block {border-style: solid; border-color: gray; border-width: 1px; }<
 </head>
 
 <body>
+Консольная утилита позволяющая создавать сессии к которым моет подключиться много пользователей<br/>
 <br/>
-<h3>1. добавление в STASH с подписью</h3>
-<br/>
-git stash [save <span style="font-size:80%">p|--patch] [-k|--[no</span>keep-index] [-q|--quiet]<br/>
-                    [-u|--include-untracked] [-a|--all] [<message>]]<br/>
-<br/>
-Пример : <br/>
-<br/>
+ Создание сессии <br/>
 <div class="source-block"><div class="highlight-default">
-<pre>git stash save <span class="s2">&quot;blablabla&quot;</span>
-</pre>
-</div></div><br/>
-<h3>2. раскраска названия ветки цветом</h3>
-<br/>
-<div class="source-block"><div class="highlight-default">
-<pre>git config --global color.status.branch <span class="s2">&quot;yellow&quot;</span>
-</pre>
-</div></div><br/>
-<h3>3. Несколько SSH ключей для MacOS, GitBash и Linux </h3>
-<br/>
-Создаем несколько ключей с помощью команды<br/>
-<div class="source-block"><div class="highlight-default">
-<pre>ssh-keygen -f ~/.ssh/&lt;personalFileName1&gt; -C <span class="s2">&quot;&lt;personalKeyId1&gt;&quot;</span> 
-ssh-keygen -f ~/.ssh/&lt;personalFileName2&gt; -C <span class="s2">&quot;&lt;personalKeyId2&gt;&quot;</span>
+<pre>screen -dmS smsAn-watch
 </pre>
 </div></div><br/>
 <br/>
-Создаем config-фаил:<br/>
+Подключение к сессии <br/>
 <div class="source-block"><div class="highlight-default">
-<pre>nano ~/.ssh/config
+<pre>screen -x smsAn-watch
 </pre>
 </div></div><br/>
 <br/>
-Заносим тутда такие данные <br/>
+Список сессий <br/>
 <div class="source-block"><div class="highlight-default">
-<pre>Host bitbucket.org
- HostName bitbucket.org
- IdentityFile ~/.ssh/workid
-Host &lt;personalKeyId1&gt;
- HostName bitbucket.org
- IdentityFile ~/.ssh/&lt;personalFileName1&gt;
-Host &lt;personalKeyId2&gt;
- HostName bitbucket.org
- IdentityFile ~/.ssh/&lt;personalFileName2&gt;
+<pre>screen -ls
 </pre>
 </div></div><br/>
-<br/>
-Ссылки на Git -репозитарии по умолчанию выглядят так<br/>
-<div class="source-block"><div class="highlight-default">
-<pre>git@bitbucket.org:&lt;accountname&gt;/&lt;reponame&gt;.git
-</pre>
-</div></div><br/>
-По сути "bitbucket.org" -это ни что инное как наш "personalKeyId1".<br/>
-Меняя эту часть в ссылке на репозитарий - мы будем указывать каким ключем пользоваться.<br/>
-Так для первого ключа это будет :<br/>
-<div class="source-block"><div class="highlight-default">
-<pre>git@&lt;personalKeyId1&gt;:&lt;accountname&gt;/&lt;reponame&gt;.git
-</pre>
-</div></div><br/>
-<br/>
-А для второго:<br/>
-<div class="source-block"><div class="highlight-default">
-<pre>git@&lt;personalKeyId2&gt;:&lt;accountname&gt;/&lt;reponame&gt;.git
-</pre>
-</div></div><br/>
-<br/>
-Другие статьи: <a href="/Полезные статьи по темам/Git, github">/Полезные статьи по темам/Git, github</a>
 </body>
 </html>
