@@ -31,7 +31,7 @@ nano ~/.ssh/config
 (:sourceend:)
 
 Заносим тутда такие данные 
-(:source lang="text":)
+(:source lang="bash":)
 Host bitbucket.org
  HostName bitbucket.org
  IdentityFile ~/.ssh/workid
@@ -44,19 +44,26 @@ Host <personalKeyId2>
 (:sourceend:)
 
 Ссылки на Git -репозитарии по умолчанию выглядят так
-(:source lang="text":)
+(:source lang="bash":)
 git@bitbucket.org:<accountname>/<reponame>.git
 (:sourceend:)
 По сути "bitbucket.org" -это ни что инное как наш "personalKeyId1".
 Меняя эту часть в ссылке на репозитарий - мы будем указывать каким ключем пользоваться.
 Так для первого ключа это будет :
-(:source lang="text":)
+(:source lang="bash":)
 git@<personalKeyId1>:<accountname>/<reponame>.git
 (:sourceend:)
 
 А для второго:
-(:source lang="text":)
+(:source lang="bash":)
 git@<personalKeyId2>:<accountname>/<reponame>.git
+(:sourceend:)
+
+!!!! (:counter:). Просмотр файла в другой ветке
+
+(:source lang="bash":)
+git show <some-branch>:<some-file>.js
+
 (:sourceend:)
 
 Другие статьи: [[/Полезные статьи по темам/Git, github]]
