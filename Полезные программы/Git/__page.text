@@ -63,7 +63,12 @@ git@<personalKeyId2>:<accountname>/<reponame>.git
 
 (:source lang="bash":)
 git show <some-branch>:<some-file>.js
-
 (:sourceend:)
 
-Другие статьи: [[/Полезные статьи по темам/Git, github]]
+!!!! (:counter:). Применение изменений коммита из другой ветки к текущей
+
+(:source lang="bash":)
+git cherry-pic <commit>
+(:sourceend:)
+----
+Другие статьи: [[ Полезные статьи по Git -> /Полезные статьи по темам/Git, github]]
