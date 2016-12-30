@@ -1,19 +1,15 @@
 !!! Менеджер установки пакетов NPM
 
 
-(:style:)
-div {display: inline}
-#first {color: red}
-(:styleend:)
 
-<div id='first'>
-[++++ВАЖНО!!++++]</div> <div id='2'>[++Пакет '''{+jq+}''' ставить через '''{+brew+}'''++]</div> !!!!
+[++++ВАЖНО!!++++]</div> <div id='2'>[++Пакет '''{+jq+}''' ставить через '''{+brew+}'''++] !!!!
 
 (:source lang="shell":)
 n 0.12.7
 (:sourceend:)
 
 !!! Пакет coprsproxy для проксирования трафика при отладке
+
 
 установка 
 
@@ -23,7 +19,20 @@ npm install -g corsproxy
 
 использование
 
-
 (:source lang="shell":)
 corsproxy
+(:sourceend:)
+
+!!! Пакет npm-check-updates для обновления пакетов
+
+установка 
+
+(:source lang="shell":)
+npm install -g npm-check-updates
+(:sourceend:)
+
+использование
+
+(:source lang="shell":)
+ncu
 (:sourceend:)
