@@ -3,14 +3,15 @@ type = search
 tags = 
 order = 0
 creationdatetime = 2015-10-15 09:55:26.750854
-datetime = 2016-04-15 16:46:35.888000
+datetime = 2017-03-27 13:37:34.868000
 
 [Search]
-phrase = adb
+phrase = bey
 tags = 
 strategy = 0
 sort = 0
 
 [SearchResults]
-page_0 = Полезные программы/adb
+page_0 = Kubuntu/Нужные программы
+page_1 = Kubuntu/Нужные программы/Beyond Compare
 

@@ -5,3 +5,4 @@
 (:counter:).   '''Taskwarrior''' - Консольный менеджер тасков
 (:counter:).''' mtr''' - удобный tracerout
 (:counter:). '''redmine''' - планировщик
+(:counter:). '''TagScanner''' - Програма нормализирующая теги

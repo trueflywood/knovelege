@@ -1,0 +1,1 @@
+Идентификатор хотя бы одного iCloud containers должен называться также как и идентификатор приложения с префиксом iCloud. Иначе xCode  будет показывать ошибки "add the icloud feature to your app id"

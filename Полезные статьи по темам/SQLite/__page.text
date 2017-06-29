@@ -1,0 +1,25 @@
+Проверка на использование индексов запросами "EXPLAIN QUERY PLAN"
+[[ссылка на документацию -> https://www.sqlite.org/eqp.html]]
+пример запроса
+(:source lang="sql":)
+EXPLAIN QUERY PLAN SELECT t1.*, t2.* FROM t1, t2 WHERE t1.a=1 AND t1.b>2;
+(:sourceend:)
+
+пример ответа:
+(:table border="1":)
+(:row:)
+(:hcell:)selectid
+(:hcell:)order
+(:hcell:)from
+(:hcell:)detail
+(:row:)
+(:cell:)0
+(:cell:)0
+(:cell:)0
+(:cell:)SEARCH TABLE tbl_messages USING INDEX i3 (id_user_from=?)
+(:row:)
+(:cell:)0
+(:cell:)0
+(:cell:)0
+(:cell:)SEARCH TABLE tbl_messages USING INDEX i4 (id_user_to=?)
+(:tableend:)

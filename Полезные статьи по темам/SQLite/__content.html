@@ -94,12 +94,30 @@ div.source-block {border-style: solid; border-color: gray; border-width: 1px; }<
 </head>
 
 <body>
-Глобальные перменные хранятся в <b> ~/.bash_profile</b><br/>
-перечитывается он командой <br/>
-<br/>
+Проверка на использование индексов запросами "EXPLAIN QUERY PLAN"<br/>
+<a href="https://www.sqlite.org/eqp.html">ссылка на документацию</a><br/>
+пример запроса<br/>
 <div class="source-block"><div class="highlight-default">
-<pre><span></span>source ~/.bash_profile
+<pre><span></span><span class="k">EXPLAIN</span> <span class="n">QUERY</span> <span class="n">PLAN</span> <span class="k">SELECT</span> <span class="n">t1</span><span class="p">.</span><span class="o">*</span><span class="p">,</span> <span class="n">t2</span><span class="p">.</span><span class="o">*</span> <span class="k">FROM</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="k">WHERE</span> <span class="n">t1</span><span class="p">.</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span> <span class="k">AND</span> <span class="n">t1</span><span class="p">.</span><span class="n">b</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">;</span>
 </pre>
-</div></div>
+</div></div><br/>
+<br/>
+пример ответа:<br/>
+<table border="1">
+<tr><th>selectid</th><th>order</th><th>from</th><th>detail</th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>SEARCH TABLE tbl_messages USING INDEX i3 (id_user_from=?)</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>SEARCH TABLE tbl_messages USING INDEX i4 (id_user_to=?)</td>
+</tr>
+</table>
 </body>
 </html>
