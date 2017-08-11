@@ -36,3 +36,9 @@ npm install -g npm-check-updates
 (:source lang="shell":)
 ncu
 (:sourceend:)
+
+!!! Вывод версий пакетов
+(:source lang="shell":)
+npm list -g --depth=0 #глобальные
+npm list --depth=0 #локальные
+(:sourceend:)
