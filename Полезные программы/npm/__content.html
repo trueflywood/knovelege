@@ -140,6 +140,78 @@ div.source-block {border-style: solid; border-color: gray; border-width: 1px; }<
 <pre><span></span>npm list -g --depth<span class="o">=</span><span class="m">0</span> <span class="c1">#глобальные</span>
 npm list --depth<span class="o">=</span><span class="m">0</span> <span class="c1">#локальные</span>
 </pre>
-</div></div>
+</div></div><br/>
+<h2>Сравнение версий</h2>
+Для сравнения версий используется пакет <a href="https://github.com/npm/node-semver">semver</a><br/>
+В описании пакета расписано как сравнивать версии<br/>
+<h3>Тильдовый диапазон `~1.2.3` `~1.2` `~1`</h3>
+<br/>
+Allows patch-level changes if a minor version is specified on the<br/>
+comparator.  Allows minor-level changes if not.<br/>
+<ul>
+<li>`~1.2.3` := `>=1.2.3 <1.(2+1).0` := `>=1.2.3 <1.3.0`</li>
+<li>`~1.2` := `>=1.2.0 <1.(2+1).0` := `>=1.2.0 <1.3.0` (Same as `1.2.x`)</li>
+<li>`~1` := `>=1.0.0 <(1+1).0.0` := `>=1.0.0 <2.0.0` (Same as `1.x`)</li>
+<li>`~0.2.3` := `>=0.2.3 <0.(2+1).0` := `>=0.2.3 <0.3.0`</li>
+<li>`~0.2` := `>=0.2.0 <0.(2+1).0` := `>=0.2.0 <0.3.0` (Same as `0.2.x`)</li>
+<li>`~0` := `>=0.0.0 <(0+1).0.0` := `>=0.0.0 <1.0.0` (Same as `0.x`)</li>
+<li>`~1.2.3-beta.2` := `>=1.2.3-beta.2 <1.3.0` Note that prereleases in</li>
+</ul>
+  the `1.2.3` version will be allowed, if they are greater than or<br/>
+  equal to `beta.2`.  So, `1.2.3-beta.4` would be allowed, but<br/>
+  `1.2.4-beta.2` would not, because it is a prerelease of a<br/>
+  different `[major, minor, patch]` tuple.<br/>
+<ol>
+<ol>
+<ol>
+<ol>
+<li>Caret Ranges `^1.2.3` `^0.2.5` `^0.0.4`</li>
+</ol>
+</ol>
+</ol>
+</ol>Allows changes that do not modify the left-most non-zero digit in the<br/>
+`[major, minor, patch]` tuple.  In other words, this allows patch and<br/>
+minor updates for versions `1.0.0` and above, patch updates for<br/>
+versions `0.X >=0.1.0`, and *no* updates for versions `0.0.X`.<br/>
+<br/>
+Many authors treat a `0.x` version as if the `x` were the major<br/>
+"breaking-change" indicator.<br/>
+<br/>
+Caret ranges are ideal when an author may make breaking changes<br/>
+between `0.2.4` and `0.3.0` releases, which is a common practice.<br/>
+However, it presumes that there will *not* be breaking changes between<br/>
+`0.2.4` and `0.2.5`.  It allows for changes that are presumed to be<br/>
+additive (but non-breaking), according to commonly observed practices.<br/>
+<ul>
+<li>`^1.2.3` := `>=1.2.3 <2.0.0`</li>
+<li>`^0.2.3` := `>=0.2.3 <0.3.0`</li>
+<li>`^0.0.3` := `>=0.0.3 <0.0.4`</li>
+<li>`^1.2.3-beta.2` := `>=1.2.3-beta.2 <2.0.0` Note that prereleases in</li>
+</ul>
+  the `1.2.3` version will be allowed, if they are greater than or<br/>
+  equal to `beta.2`.  So, `1.2.3-beta.4` would be allowed, but<br/>
+  `1.2.4-beta.2` would not, because it is a prerelease of a<br/>
+  different `[major, minor, patch]` tuple.
+<ul>
+<li>`^0.0.3-beta` := `>=0.0.3-beta <0.0.4`  Note that prereleases in the</li>
+</ul>
+  `0.0.3` version *only* will be allowed, if they are greater than or<br/>
+  equal to `beta`.  So, `0.0.3-pr.2` would be allowed.<br/>
+<br/>
+When parsing caret ranges, a missing `patch` value desugars to the<br/>
+number `0`, but will allow flexibility within that value, even if the<br/>
+major and minor versions are both `0`.<br/>
+<ul>
+<li>`^1.2.x` := `>=1.2.0 <2.0.0`</li>
+<li>`^0.0.x` := `>=0.0.0 <0.1.0`</li>
+<li>`^0.0` := `>=0.0.0 <0.1.0`</li>
+</ul>
+A missing `minor` and `patch` values will desugar to zero, but also<br/>
+allow flexibility within those values, even if the major version is<br/>
+zero.<br/>
+<ul>
+<li>`^1.x` := `>=1.0.0 <2.0.0`</li>
+<li>`^0.x` := `>=0.0.0 <1.0.0`</li>
+</ul>
 </body>
 </html>
