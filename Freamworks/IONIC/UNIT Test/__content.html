@@ -20,6 +20,44 @@
 материал взят отсюда <br/>
 <a href="http://m.habrahabr.ru/post/270485/">http://m.habrahabr.ru/post/270485/</a> - по IONIC<br/>
 <br/>
-<a href="http://best-web-creation.com/articles/view/id/angular-js-app-part-3-unit-test?lang=ru">http://best-web-creation.com/articles/view/id/angular-js-app-part-3-unit-test?lang=ru</a> - Angular + Webstorm
+<a href="http://best-web-creation.com/articles/view/id/angular-js-app-part-3-unit-test?lang=ru">http://best-web-creation.com/articles/view/id/angular-js-app-part-3-unit-test?lang=ru</a> - Angular + Webstorm<br/>
+<br/>
+1. клонируем проект с примером тестов<br/>
+<br/>
+git clone <a href="https://github.com/ionic-team/ionic-unit-testing-example.git">https://github.com/ionic-team/ionic-unit-testing-example.git</a><br/>
+<br/>
+2. синхронизируем содержимое файла tsconfig.json<br/>
+3. сравниваем список пакетов и доустанавливаем нужные пакеты <br/>
+ @angular/cli<br/>
+@types/jasmine<br/>
+@types/node<br/>
+angular2-template-loader<br/>
+html-loader<br/>
+istanbul-instrumenter-loader<br/>
+jasmine<br/>
+jasmine-spec-reporter<br/>
+karma<br/>
+karma-chrome-launcher<br/>
+karma-coverage-istanbul-reporter<br/>
+karma-jasmine<br/>
+karma-jasmine-html-reporter<br/>
+karma-sourcemap-loader<br/>
+karma-webpack<br/>
+null-loader<br/>
+protractor<br/>
+ts-loader<br/>
+ts-node<br/>
+<br/>
+4. копируем папку Test-config в папку проекта<br/>
+5. копируем папку e2e  в папку проекта<br/>
+6 копируем скрипты для запуска тестов<br/>
+<br/>
+ "test": "karma start ./test-config/karma.conf.js",<br/>
+    "test-ci": "karma start ./test-config/karma.conf.js --single-run",<br/>
+    "test-coverage": "karma start ./test-config/karma.conf.js --coverage",<br/>
+    "e2e": "npm run e2e-update && npm run e2e-test",<br/>
+    "e2e-test": "protractor ./test-config/protractor.conf.js",<br/>
+    "e2e-update": "webdriver-manager update --standalone false --gecko false"<br/>
+<br/>
 </body>
 </html>

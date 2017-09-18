@@ -2,3 +2,42 @@
 [[http://m.habrahabr.ru/post/270485/]] - по IONIC
 
 [[http://best-web-creation.com/articles/view/id/angular-js-app-part-3-unit-test?lang=ru]] - Angular + Webstorm
+
+1. клонируем проект с примером тестов
+
+git clone https://github.com/ionic-team/ionic-unit-testing-example.git
+
+2. синхронизируем содержимое файла tsconfig.json
+3. сравниваем список пакетов и доустанавливаем нужные пакеты 
+ @angular/cli
+@types/jasmine
+@types/node
+angular2-template-loader
+html-loader
+istanbul-instrumenter-loader
+jasmine
+jasmine-spec-reporter
+karma
+karma-chrome-launcher
+karma-coverage-istanbul-reporter
+karma-jasmine
+karma-jasmine-html-reporter
+karma-sourcemap-loader
+karma-webpack
+null-loader
+protractor
+ts-loader
+ts-node
+
+4. копируем папку Test-config в папку проекта
+5. копируем папку e2e  в папку проекта
+6 копируем скрипты для запуска тестов
+
+ "test": "karma start ./test-config/karma.conf.js",
+    "test-ci": "karma start ./test-config/karma.conf.js --single-run",
+    "test-coverage": "karma start ./test-config/karma.conf.js --coverage",
+    "e2e": "npm run e2e-update && npm run e2e-test",
+    "e2e-test": "protractor ./test-config/protractor.conf.js",
+    "e2e-update": "webdriver-manager update --standalone false --gecko false"
+
+ 

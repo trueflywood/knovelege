@@ -144,6 +144,7 @@ npm list --depth<span class="o">=</span><span class="m">0</span> <span class="c1
 <h2>Сравнение версий</h2>
 Для сравнения версий используется пакет <a href="https://github.com/npm/node-semver">semver</a><br/>
 В описании пакета расписано как сравнивать версии<br/>
+<h2>npm outdated  --depth=0</h2>
 <h3>Тильдовый диапазон `~1.2.3` `~1.2` `~1`</h3>
 <br/>
 Allows patch-level changes if a minor version is specified on the<br/>
@@ -161,15 +162,9 @@ comparator.  Allows minor-level changes if not.<br/>
   equal to `beta.2`.  So, `1.2.3-beta.4` would be allowed, but<br/>
   `1.2.4-beta.2` would not, because it is a prerelease of a<br/>
   different `[major, minor, patch]` tuple.<br/>
-<ol>
-<ol>
-<ol>
-<ol>
-<li>Caret Ranges `^1.2.3` `^0.2.5` `^0.0.4`</li>
-</ol>
-</ol>
-</ol>
-</ol>Allows changes that do not modify the left-most non-zero digit in the<br/>
+<h3>Caret Диаппазон `^1.2.3` `^0.2.5` `^0.0.4`</h3>
+<br/>
+Allows changes that do not modify the left-most non-zero digit in the<br/>
 `[major, minor, patch]` tuple.  In other words, this allows patch and<br/>
 minor updates for versions `1.0.0` and above, patch updates for<br/>
 versions `0.X >=0.1.0`, and *no* updates for versions `0.0.X`.<br/>

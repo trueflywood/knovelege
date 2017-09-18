@@ -6,6 +6,10 @@
 adb shell screencap -p /sdcard/screencap2.png && adb pull /sdcard/screencap2.png
 (:sourceend:)
 
+(:source lang="bash":)
+ adb shell screencap -p | sed 's/\r$//' > screen5.png
+(:sourceend:)
+
 (:counter:) Запись видео с экрана
 
  (:source lang="bash":)

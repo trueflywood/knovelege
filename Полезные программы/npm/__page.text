@@ -47,6 +47,10 @@ npm list --depth=0 #локальные
 Для сравнения версий используется пакет [[semver -> https://github.com/npm/node-semver]]
 В описании пакета расписано как сравнивать версии
 
+!!! 
+
+ npm outdated  --depth=0
+
 !!!! Тильдовый диапазон `~1.2.3` `~1.2` `~1`
 
 Allows patch-level changes if a minor version is specified on the
